@@ -4,6 +4,7 @@
 .vscode
 tmp
 tmp.c
+scratches
 
 ### C ###
 # Prerequisites
