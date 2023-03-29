@@ -1,6 +1,10 @@
 #include <stdio.h>
 
-
+/* 
+    Scrivere un programma che prenda in input da tastiera 
+    due numeri (int), e stampi se la differenza (in valore assoluto) 
+    è pari o dispari (senza usare stdlib.h)
+*/
 int main() {
     int a = 0, b = 0;
 

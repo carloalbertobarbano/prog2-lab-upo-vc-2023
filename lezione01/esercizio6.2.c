@@ -2,6 +2,12 @@
 #include <stdlib.h>
 
 
+/*
+    Esercizio 6.2: Scrivere delle funzioni per gestire 
+    la creazione di array dinamici (di tipo char). 
+    Le funzioni create_array, expand_array, e delete_array, 
+    dovranno allocare, espandere e liberare la memoria dell'array. 
+*/
 char *create_array(int size) {
     char *buf = (char*)malloc(sizeof(char) * size);
     if (buf == NULL) {
