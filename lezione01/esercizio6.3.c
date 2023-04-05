@@ -4,6 +4,12 @@
 #include <ctype.h>
 
 
+/* 
+    Esercizio 6.3: Aggiornare la funzione upperExtract (es. 5.2) 
+    in modo da restituire il risultato in una nuova stringa 
+    allocata all'interno della funzione (suggerimento: si può 
+    usare sprintf). 
+*/
 char *create_array(int size) {
     char *buf = (char*)malloc(sizeof(char) * size);
     if (buf == NULL) {
