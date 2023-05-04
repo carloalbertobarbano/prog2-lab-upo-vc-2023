@@ -11,6 +11,7 @@ typedef struct {
 } Impiegato;
 
 
+void stampa_impiegati(Impiegato *impiegati, int num_impiegati);
 Impiegato leggi_impiegato();
 int cerca_impiegato(Impiegato *impiegati, int num_impiegati, char *cognome);
 void modifica_impiegato(Impiegato *impiegato);
@@ -37,11 +38,15 @@ int main() {
         switch (choice) {
             case 0: 
                 printf("\n--- RECORD SALVATI (%d) ---\n", num_impiegati);
-                for (int i = 0; i < num_impiegati; i++) {
+                
+                // Soluzione iterativa
+                /*for (int i = 0; i < num_impiegati; i++) {
                     printf("%d) %s %s, %d anni, %c, %.2lf\n", i, impiegati[i].nome,
                            impiegati[i].cognome, impiegati[i].eta, impiegati[i].sesso,
                            impiegati[i].salario);
-                }
+                }*/
+
+                stampa_impiegati(impiegati, num_impiegati-1);
                 break;
 
             case 1: {
@@ -82,6 +87,20 @@ int main() {
     return 0;
 }
 
+
+void stampa_impiegati(Impiegato *impiegati, int num_impiegati) {
+    // Caso base
+    if (num_impiegati < 0)
+        return;
+
+    // Passo ricorsivo
+    int i = num_impiegati;
+    stampa_impiegati(impiegati, --num_impiegati);
+    printf("%d) %s %s, %d anni, %c, %.2lf\n", i, 
+           impiegati[i].nome, impiegati[i].cognome, 
+           impiegati[i].eta, impiegati[i].sesso,
+           impiegati[i].salario);
+}
 
 Impiegato leggi_impiegato() {
     Impiegato imp;
