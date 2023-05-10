@@ -11,6 +11,6 @@ void list_print(Nodo *head);
 void tailinsert(Nodo *head, int x);
 int list_count(Nodo *head);
 Nodo *list_invert(Nodo *head);
-Nodo *list_invert_v2(Nodo *head, Nodo *next);
+Nodo *list_from_array(int *arr, int n);
 
 #endif

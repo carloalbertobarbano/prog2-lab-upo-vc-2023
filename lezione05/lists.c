@@ -78,13 +78,14 @@ Nodo *list_invert(Nodo *head) {
     return inverted2;
 }
 
-Nodo* invert_v2(Nodo *head, Nodo *next) {
-    Nodo *ptrNext = head->next;
-    head->next = next;
+Nodo *list_from_array(int *arr, int n) {
+    Nodo *head = malloc(sizeof(Nodo));
+    head->data = arr[0];
+    head->next = NULL;
 
-    if (ptrNext == NULL)
-        return head;
+    for (int i = 1; i < n; i++)
+        tailinsert(head, arr[i]);
     
-    return invert_v2(ptrNext, head);
+    return head;
 }
    
